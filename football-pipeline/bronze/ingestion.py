@@ -9,7 +9,7 @@ processing_date = sys.argv[4]
 catalog = sys.argv[5]
 
 
-landing_path = "/Volumes/football_dev/landing/football_data/"
+landing_path = f"/Volumes/{catalog}/landing/football_data/"
 
 
 def ingest_data():

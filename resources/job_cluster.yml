@@ -11,5 +11,5 @@ variables:
       runtime_engine: STANDARD
       kind: CLASSIC_PREVIEW
       is_single_node: true
-      queue:
-        enabled: true
+      
+    
