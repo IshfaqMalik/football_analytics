@@ -1,0 +1,39 @@
+name: PR Checks
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    environment: test
+    env:
+      DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
+      DATABRICKS_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+      DATABRICKS_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+      DATABRICKS_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+      AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+      AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+      AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install Databricks CLI
+        run: curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install dbt-databricks
+      - name: Validate Databricks Bundle
+        run: databricks bundle validate --target test
+      - name: Validate dbt
+        working-directory: gold_layer_football
+        run: |
+          dbt deps
+          dbt debug --target test
+          dbt compile --target test
+        
