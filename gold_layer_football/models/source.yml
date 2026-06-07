@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: silver
+    catalog: "{{ target.catalog }}"
+    schema: silver
+    tables:
+      - name: transformed_teams_tbl
+      - name: transformed_matches_tbl
+      - name: transformed_standings_tbl
+      - name: transformed_scorers_tbl

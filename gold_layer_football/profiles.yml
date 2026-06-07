@@ -1,0 +1,35 @@
+gold_layer_football:
+  target: databricks_cluster
+  outputs:
+    databricks_cluster: 
+    dev:
+      type: databricks
+      host: https://adb-7405612200933438.18.azuredatabricks.net
+      http_path: /sql/1.0/warehouses/0a9078df66d5fbb4
+      catalog: football_dev
+      schema: gold
+      threads: 4
+
+    test:
+      type: databricks
+      host: https://adb-7405607648433478.18.azuredatabricks.net
+      http_path: /sql/1.0/warehouses/f8034f4188472bfd
+      catalog: football_test
+      schema: gold
+      threads: 4
+      auth_type: oauth
+      client_id: "{{ env_var('AZURE_CLIENT_ID')}}"
+      client_secret: "{{ env_var('AZURE_CLIENT_SECRET')}}"
+
+    prod:
+      type: databricks
+      host: https://adb-7405609543179080.0.azuredatabricks.net
+      http_path: /sql/1.0/warehouses/cb00ca4e59a0008f
+      catalog: football_prod
+      schema: gold
+      threads: 4
+      auth_type: oauth
+      client_id: "{{ env_var('AZURE_CLIENT_ID')}}"
+      client_secret: "{{ env_var('AZURE_CLIENT_SECRET')}}"
+
+ 
