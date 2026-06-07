@@ -1,0 +1,35 @@
+
+name: Deploy to prod
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-to-prod:
+    name: Deploy to prod
+    runs-on: ubuntu-latest
+    environment: prod
+
+    env:
+      DATABRICKS_HOST: https://adb-7405609543179080.0.azuredatabricks.net
+      ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+      ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+
+    steps:
+      - uses: actions/checkout@v6.0.3
+
+      - uses: actions/setup-python@v6.2.0
+        with:
+          python-version: "3.12"
+
+      - name: Install Databricks CLI
+        run: curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install dbt-databricks
+      - name: Deploy to test
+        run: databricks bundle deploy --target test
