@@ -2,6 +2,7 @@ gold_layer_football:
   target: databricks_cluster
   outputs:
     databricks_cluster: 
+<<<<<<< HEAD
     dev:
       type: databricks
       host: https://adb-7405612200933438.18.azuredatabricks.net
@@ -9,6 +10,9 @@ gold_layer_football:
       catalog: football_dev
       schema: gold
       threads: 4
+=======
+    
+>>>>>>> 9421d40 (modified profile)
 
     test:
       type: databricks
