@@ -3,6 +3,9 @@ gold_layer_football:
   outputs:
     databricks_cluster: 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f784a87 (file modified)
     dev:
       type: databricks
       host: https://adb-7405612200933438.18.azuredatabricks.net
@@ -10,9 +13,12 @@ gold_layer_football:
       catalog: football_dev
       schema: gold
       threads: 4
+<<<<<<< HEAD
 =======
     
 >>>>>>> 9421d40 (modified profile)
+=======
+>>>>>>> f784a87 (file modified)
 
     test:
       type: databricks
