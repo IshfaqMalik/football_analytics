@@ -1,0 +1,35 @@
+name: Deploy to Test
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-to-test:
+    name: Deploy to test
+    runs-on: ubuntu-latest
+    environment: test
+
+    env:
+      DATABRICKS_HOST: https://adb-7405607648433478.18.azuredatabricks.net
+      DATABRICKS_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+      DATABRICKS_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+      DATABRICKS_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+
+    steps:
+      - uses: actions/checkout@v6.0.3
+
+      - uses: actions/setup-python@v6.2.0
+        with:
+          python-version: "3.12"
+
+      - name: Install Databricks CLI
+        run: curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install dbt-databricks
+
+      - name: Deploy to test
+        run: databricks bundle deploy --target test
