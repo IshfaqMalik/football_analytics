@@ -1,0 +1,263 @@
+[0m17:59:54.750538 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x729f8467c560>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x729f8467e900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x729f8467c5f0>]}
+
+
+============================== 17:59:54.756781 | 8ff61050-f953-4561-b8f1-d22855c4fe03 ==============================
+[0m17:59:54.756781 [info ] [MainThread]: Running with dbt=1.11.8
+[0m17:59:54.757373 [debug] [MainThread]: running dbt with arguments {'log_path': 'logs', 'use_colors': 'True', 'debug': 'False', 'static_parser': 'True', 'introspect': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/home/ishfa/.dbt', 'cache_selected_only': 'False', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'warn_error': 'None', 'fail_fast': 'False', 'quiet': 'False', 'empty': 'None', 'target_path': 'None', 'log_cache_events': 'False', 'log_format': 'default', 'write_json': 'True', 'invocation_command': 'dbt init football-goldlayer', 'printer_width': '80'}
+[0m17:59:54.769281 [info ] [MainThread]: Creating dbt configuration folder at /home/ishfa/.dbt
+[0m18:00:21.004774 [debug] [MainThread]: Starter project path: /home/ishfa/football_analytics/.venv_dab/lib/python3.12/site-packages/dbt/include/starter_project
+[0m18:00:21.021020 [info ] [MainThread]: 
+Your new dbt project "gold_layer_football" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m18:00:21.021722 [info ] [MainThread]: Setting up your profile.
+[0m18:00:56.570741 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m18:00:56.571524 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m18:00:56.571826 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m18:12:32.658596 [info ] [MainThread]: Profile gold_layer_football written to /home/ishfa/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m18:12:32.661216 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 757.9523, "process_in_blocks": "267312", "process_kernel_time": 1.774522, "process_mem_max_rss": "227776", "process_out_blocks": "88", "process_user_time": 2.450514}
+[0m18:12:32.662358 [debug] [MainThread]: Command `dbt init` succeeded at 18:12:32.662249 after 757.95 seconds
+[0m18:12:32.662882 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x729f84913320>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x729f51681f70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x729f50209d90>]}
+[0m18:12:32.663400 [debug] [MainThread]: Flushing usage events
+[0m18:12:33.108777 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:24:53.956236 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7977be7ff860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7977be0171a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7977be50b0e0>]}
+
+
+============================== 21:24:53.962012 | 73da15c9-4532-4441-915f-c784265793bc ==============================
+[0m21:24:53.962012 [info ] [MainThread]: Running with dbt=1.11.8
+[0m21:24:53.962435 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'empty': 'False', 'target_path': 'None', 'no_print': 'None', 'log_cache_events': 'False', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'log_path': 'logs', 'profiles_dir': '/home/ishfa/.dbt', 'use_experimental_parser': 'False', 'log_format': 'default', 'write_json': 'True', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'introspect': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'quiet': 'False', 'debug': 'False', 'invocation_command': 'dbt run --select cl_team_performances', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m21:24:53.962789 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/ishfa/football_analytics/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m21:24:53.963981 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.053192046, "process_in_blocks": "69280", "process_kernel_time": 0.257193, "process_mem_max_rss": "102824", "process_out_blocks": "24", "process_user_time": 1.032854}
+[0m21:24:53.964321 [debug] [MainThread]: Command `dbt run` failed at 21:24:53.964251 after 0.05 seconds
+[0m21:24:53.964561 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7977c22e34d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7977bdb09640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7977be50b0e0>]}
+[0m21:24:53.964804 [debug] [MainThread]: Flushing usage events
+[0m21:24:54.449470 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:27:10.573265 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d44512acbc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d44517b9370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d44512ad3a0>]}
+
+
+============================== 22:27:10.577285 | f56f66f7-d7f4-474e-95f6-69ccba4563ca ==============================
+[0m22:27:10.577285 [info ] [MainThread]: Running with dbt=1.11.8
+[0m22:27:10.577704 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/home/ishfa/.dbt', 'fail_fast': 'False', 'quiet': 'False', 'target_path': 'None', 'version_check': 'True', 'empty': 'None', 'printer_width': '80', 'write_json': 'True', 'log_path': 'logs', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'invocation_command': 'dbt debug --target test', 'debug': 'False', 'warn_error': 'None', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'no_print': 'None', 'use_experimental_parser': 'False', 'partial_parse': 'True'}
+[0m22:27:10.593167 [info ] [MainThread]: dbt version: 1.11.8
+[0m22:27:10.593622 [info ] [MainThread]: python version: 3.12.3
+[0m22:27:10.593917 [info ] [MainThread]: python path: /home/ishfa/football_analytics/.venv_dab/bin/python3
+[0m22:27:10.594140 [info ] [MainThread]: os info: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m22:27:11.252226 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m22:27:11.252988 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m22:27:11.253362 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m22:35:00.838278 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75274eda3b90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75274eda30b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75274e329760>]}
+
+
+============================== 22:35:00.841870 | 6a2636f1-eb43-4edb-a39a-6b7aa2d4ece5 ==============================
+[0m22:35:00.841870 [info ] [MainThread]: Running with dbt=1.11.8
+[0m22:35:00.842356 [debug] [MainThread]: running dbt with arguments {'use_colors': 'True', 'warn_error': 'None', 'debug': 'False', 'introspect': 'True', 'log_path': 'logs', 'no_print': 'None', 'cache_selected_only': 'False', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug --target test', 'write_json': 'True', 'log_cache_events': 'False', 'empty': 'None', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'use_experimental_parser': 'False', 'static_parser': 'True', 'profiles_dir': '/home/ishfa/.dbt', 'printer_width': '80', 'partial_parse': 'True', 'log_format': 'default'}
+[0m22:35:00.856258 [info ] [MainThread]: dbt version: 1.11.8
+[0m22:35:00.856682 [info ] [MainThread]: python version: 3.12.3
+[0m22:35:00.857003 [info ] [MainThread]: python path: /home/ishfa/football_analytics/.venv_dab/bin/python3
+[0m22:35:00.857294 [info ] [MainThread]: os info: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m22:35:01.518680 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m22:35:01.519093 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m22:35:01.519353 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m22:35:02.955193 [error] [MainThread]: Encountered an error:
+default auth: external-browser: [Errno 98] Address already in use. Config: host=https://adb-7405609543179080.0.azuredatabricks.net, client_id=dbt-databricks, auth_type=external-browser
+[0m22:35:02.962711 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/ishfa/football_analytics/.venv_dab/lib/python3.12/site-packages/databricks/sdk/credentials_provider.py", line 1145, in __call__
+    header_factory = provider(cfg)
+                     ^^^^^^^^^^^^^
+  File "/home/ishfa/football_analytics/.venv_dab/lib/python3.12/site-packages/databricks/sdk/credentials_provider.py", line 94, in wrapper
+    return func(cfg)
+           ^^^^^^^^^
+  File "/home/ishfa/football_analytics/.venv_dab/lib/python3.12/site-packages/databricks/sdk/credentials_provider.py", line 292, in external_browser
+    credentials = consent.launch_external_browser()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ishfa/football_analytics/.venv_dab/lib/python3.12/site-packages/databricks/sdk/oauth.py", line 583, in launch_external_browser
+    with HTTPServer(("localhost", port), handler_factory) as httpd:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socketserver.py", line 457, in __init__
+    self.server_bind()
+  File "/usr/lib/python3.12/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/lib/python3.12/socketserver.py", line 473, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ishfa/football_analytics/.venv_dab/lib/python3.12/site-packages/databricks/sdk/config.py", line 671, in init_auth
+    self._header_factory = self._credentials_strategy(self)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ishfa/football_analytics/.venv_dab/lib/python3.12/site-packages/databricks/sdk/credentials_provider.py", line 1152, in __call__
+    raise ValueError(f"{auth_type}: {e}") from e
+ValueError: external-browser: [Errno 98] Address already in use
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ishfa/football_analytics/.venv_dab/lib/python3.12/site-packages/databricks/sdk/config.py", line 268, in __init__
+    self.init_auth()
+  File "/home/ishfa/football_analytics/.venv_dab/lib/python3.12/site-packages/databricks/sdk/config.py", line 676, in init_auth
+    raise ValueError(f"{self._credentials_strategy.auth_type()} auth: {e}") from e
+ValueError: default auth: external-browser: [Errno 98] Address already in use
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ishfa/football_analytics/.venv_dab/lib/python3.12/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ishfa/football_analytics/.venv_dab/lib/python3.12/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ishfa/football_analytics/.venv_dab/lib/python3.12/site-packages/dbt/cli/main.py", line 425, in debug
+    results = task.run()
+              ^^^^^^^^^^
+  File "/home/ishfa/football_analytics/.venv_dab/lib/python3.12/site-packages/dbt/task/debug.py", line 114, in run
+    load_profile_status: SubtaskStatus = self._load_profile()
+                                         ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ishfa/football_analytics/.venv_dab/lib/python3.12/site-packages/dbt/task/debug.py", line 205, in _load_profile
+    profile: Profile = Profile.render(
+                       ^^^^^^^^^^^^^^^
+  File "/home/ishfa/football_analytics/.venv_dab/lib/python3.12/site-packages/dbt/config/profile.py", line 404, in render
+    return cls.from_raw_profiles(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ishfa/football_analytics/.venv_dab/lib/python3.12/site-packages/dbt/config/profile.py", line 370, in from_raw_profiles
+    return cls.from_raw_profile_info(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ishfa/football_analytics/.venv_dab/lib/python3.12/site-packages/dbt/config/profile.py", line 326, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ishfa/football_analytics/.venv_dab/lib/python3.12/site-packages/dbt/config/profile.py", line 153, in _credentials_from_profile
+    credentials = cls.from_dict(data)
+                  ^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 4, in __mashumaro_from_dict__
+  File "<string>", line 105, in __mashumaro_from_dict__
+  File "<string>", line 24, in __init__
+  File "/home/ishfa/football_analytics/.venv_dab/lib/python3.12/site-packages/dbt/adapters/databricks/credentials.py", line 133, in __post_init__
+    self._credentials_manager = DatabricksCredentialManager.create_from(self)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ishfa/football_analytics/.venv_dab/lib/python3.12/site-packages/dbt/adapters/databricks/credentials.py", line 283, in create_from
+    return DatabricksCredentialManager(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 12, in __init__
+  File "/home/ishfa/football_analytics/.venv_dab/lib/python3.12/site-packages/dbt/adapters/databricks/credentials.py", line 344, in __post_init__
+    self._config = self.authenticate_with_external_browser()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ishfa/football_analytics/.venv_dab/lib/python3.12/site-packages/dbt/adapters/databricks/credentials.py", line 310, in authenticate_with_external_browser
+    return Config(
+           ^^^^^^^
+  File "/home/ishfa/football_analytics/.venv_dab/lib/python3.12/site-packages/databricks/sdk/config.py", line 272, in __init__
+    raise ValueError(message) from e
+ValueError: default auth: external-browser: [Errno 98] Address already in use. Config: host=https://adb-7405609543179080.0.azuredatabricks.net, client_id=dbt-databricks, auth_type=external-browser
+
+[0m22:35:02.965095 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 2.166865, "process_in_blocks": "119584", "process_kernel_time": 1.640739, "process_mem_max_rss": "230988", "process_out_blocks": "24", "process_user_time": 2.350791}
+[0m22:35:02.965894 [debug] [MainThread]: Command `dbt debug` failed at 22:35:02.965774 after 2.17 seconds
+[0m22:35:02.966658 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75274decbf20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75274ed4e780>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7527176f5730>]}
+[0m22:35:02.966998 [debug] [MainThread]: Flushing usage events
+[0m22:35:03.426975 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:37:01.625255 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7583e33aeba0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7583e4051340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7583e2b07b30>]}
+
+
+============================== 22:37:01.629435 | 80f77894-f66d-46ba-9fe2-d6912e3d79ca ==============================
+[0m22:37:01.629435 [info ] [MainThread]: Running with dbt=1.11.8
+[0m22:37:01.629985 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'printer_width': '80', 'warn_error': 'None', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'introspect': 'True', 'log_path': 'logs', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'version_check': 'True', 'debug': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'invocation_command': 'dbt debug --target test', 'write_json': 'True', 'empty': 'None', 'target_path': 'None', 'quiet': 'False', 'partial_parse': 'True', 'fail_fast': 'False', 'profiles_dir': '/home/ishfa/.dbt', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m22:37:01.646515 [info ] [MainThread]: dbt version: 1.11.8
+[0m22:37:01.648233 [info ] [MainThread]: python version: 3.12.3
+[0m22:37:01.648872 [info ] [MainThread]: python path: /home/ishfa/football_analytics/.venv_dab/bin/python3
+[0m22:37:01.649136 [info ] [MainThread]: os info: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m22:37:01.655196 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'DATABRICKS_CLIENT_ID'
+[0m22:37:01.656903 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.07210995, "process_in_blocks": "55440", "process_kernel_time": 0.175696, "process_mem_max_rss": "102840", "process_out_blocks": "8", "process_user_time": 1.025579}
+[0m22:37:01.657320 [debug] [MainThread]: Command `dbt debug` failed at 22:37:01.657233 after 0.07 seconds
+[0m22:37:01.657596 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7583e2607a40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7583e4051340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7583e2367680>]}
+[0m22:37:01.657904 [debug] [MainThread]: Flushing usage events
+[0m22:37:02.120647 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:38:45.321841 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7965c178ecf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7965c0d791f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7965c178f440>]}
+
+
+============================== 22:38:45.325429 | 3add9e92-4f2c-45eb-b95d-535b73a46f64 ==============================
+[0m22:38:45.325429 [info ] [MainThread]: Running with dbt=1.11.8
+[0m22:38:45.325944 [debug] [MainThread]: running dbt with arguments {'empty': 'None', 'debug': 'False', 'log_path': 'logs', 'log_format': 'default', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'indirect_selection': 'eager', 'target_path': 'None', 'warn_error': 'None', 'static_parser': 'True', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'use_colors': 'True', 'cache_selected_only': 'False', 'invocation_command': 'dbt debug --target test', 'quiet': 'False', 'version_check': 'True', 'profiles_dir': '/home/ishfa/.dbt', 'introspect': 'True', 'printer_width': '80', 'write_json': 'True', 'partial_parse': 'True'}
+[0m22:38:45.338316 [info ] [MainThread]: dbt version: 1.11.8
+[0m22:38:45.338728 [info ] [MainThread]: python version: 3.12.3
+[0m22:38:45.338979 [info ] [MainThread]: python path: /home/ishfa/football_analytics/.venv_dab/bin/python3
+[0m22:38:45.339196 [info ] [MainThread]: os info: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m22:38:45.986253 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m22:38:45.986677 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m22:38:45.986948 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m22:38:46.843413 [warn ] [MainThread]: Databricks adapter: You are using Azure Service Principal, please use 'azure_client_id' and 'azure_client_secret' instead.
+[0m22:38:46.853994 [info ] [MainThread]: Using profiles dir at /home/ishfa/.dbt
+[0m22:38:46.854477 [info ] [MainThread]: Using profiles.yml file at /home/ishfa/.dbt/profiles.yml
+[0m22:38:46.854761 [info ] [MainThread]: Using dbt_project.yml file at /home/ishfa/football_analytics/dbt_project.yml
+[0m22:38:46.855007 [info ] [MainThread]: adapter type: databricks
+[0m22:38:46.855236 [info ] [MainThread]: adapter version: 1.12.0
+[0m22:38:46.855494 [info ] [MainThread]: Configuration:
+[0m22:38:46.855758 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m22:38:46.855995 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m22:38:46.856209 [info ] [MainThread]: Required dependencies:
+[0m22:38:46.856448 [debug] [MainThread]: Executing "git --help"
+[0m22:38:46.861449 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m22:38:46.861975 [debug] [MainThread]: STDERR: "b''"
+[0m22:38:46.862278 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m22:38:46.862727 [info ] [MainThread]: Connection:
+[0m22:38:46.863442 [info ] [MainThread]:   host: https://adb-7405607648433478.18.azuredatabricks.net
+[0m22:38:46.864473 [info ] [MainThread]:   http_path: /sql/1.0/warehouses/f8034f4188472bfd
+[0m22:38:46.865137 [info ] [MainThread]:   catalog: football_test
+[0m22:38:46.865704 [info ] [MainThread]:   schema: gold
+[0m22:38:46.866604 [info ] [MainThread]: Registered adapter: databricks=1.12.0
+[0m22:38:46.934807 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(session-id=None, name=debug) - Creating connection
+[0m22:38:46.935387 [debug] [MainThread]: Acquiring new databricks connection 'debug'
+[0m22:38:46.935861 [debug] [MainThread]: Using databricks connection "debug"
+[0m22:38:46.936158 [debug] [MainThread]: On debug: select 1 as id
+[0m22:38:46.936362 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:38:47.751524 [warn ] [MainThread]: databricks-sql-connector adapter: Token exchange failed, using external token: %s
+[0m22:38:48.321331 [debug] [MainThread]: Databricks adapter: Connection(session-id=01f161f0-19f3-1839-9a3c-779f24c3b21d) - Created
+[0m22:38:56.075945 [debug] [MainThread]: SQL status: OK in 9.140 seconds
+[0m22:38:56.080184 [debug] [MainThread]: Databricks adapter: Cursor(session-id=01f161f0-19f3-1839-9a3c-779f24c3b21d, command-id=01f161f0-1a11-1b90-b4da-8ed2cf55454a) - Closing
+[0m22:38:56.231484 [debug] [MainThread]: On debug: Close
+[0m22:38:56.234496 [debug] [MainThread]: Databricks adapter: Connection(session-id=01f161f0-19f3-1839-9a3c-779f24c3b21d) - Closing
+[0m22:38:56.341862 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m22:38:56.344872 [info ] [MainThread]: [31m1 check failed:[0m
+[0m22:38:56.346327 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </home/ishfa/football_analytics/dbt_project.yml> not found
+
+[0m22:38:56.350884 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 11.068381, "process_in_blocks": "124496", "process_kernel_time": 1.505284, "process_mem_max_rss": "235480", "process_out_blocks": "24", "process_user_time": 2.707016}
+[0m22:38:56.351993 [debug] [MainThread]: Command `dbt debug` failed at 22:38:56.351694 after 11.07 seconds
+[0m22:38:56.352782 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7965c0c4c4a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79658cd2a030>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79658eb820c0>]}
+[0m22:38:56.353525 [debug] [MainThread]: Flushing usage events
+[0m22:38:56.792712 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:45:29.605537 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa0f353e750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa0f353d6d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa0f353ffe0>]}
+
+
+============================== 13:45:29.610351 | b1a977e2-7eab-41c1-b50d-7fb2a2f7ade6 ==============================
+[0m13:45:29.610351 [info ] [MainThread]: Running with dbt=1.11.8
+[0m13:45:29.610917 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'write_json': 'True', 'target_path': 'None', 'introspect': 'True', 'profiles_dir': '/home/ishfa/.dbt', 'log_format': 'default', 'cache_selected_only': 'False', 'quiet': 'False', 'log_cache_events': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'empty': 'False', 'use_colors': 'True', 'indirect_selection': 'eager', 'static_parser': 'True', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'log_path': 'logs', 'use_experimental_parser': 'False', 'invocation_command': 'dbt build --target dev', 'fail_fast': 'False', 'version_check': 'True'}
+[0m13:45:29.611272 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/ishfa/football_analytics/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m13:45:29.612691 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 0.047877833, "process_in_blocks": "1552", "process_kernel_time": 0.130403, "process_mem_max_rss": "102880", "process_out_blocks": "16", "process_user_time": 1.039276}
+[0m13:45:29.613066 [debug] [MainThread]: Command `dbt build` failed at 13:45:29.612984 after 0.05 seconds
+[0m13:45:29.613330 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa0f2e078f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa0f2e05d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa0f353d5e0>]}
+[0m13:45:29.613594 [debug] [MainThread]: Flushing usage events
+[0m13:45:30.119329 [debug] [MainThread]: An error was encountered while trying to flush usage events

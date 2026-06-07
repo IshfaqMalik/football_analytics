@@ -1,0 +1,237 @@
+
+version: 2
+models:
+  - name: team_performances
+    description: "Football team performances across all leagues"
+
+    columns:
+      - name: team_id
+        description: "Unique identifier for the team"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: team
+        description: "Team name"
+
+      - name: total_matches
+        description: "Total matches played"
+
+      - name: total_goals_scored
+        description: "Total goals scored"
+
+      - name: goals_scored_home
+        description: "Goals scored in home matches"
+
+      - name: goals_scored_away
+        description: "Goals scored in away matches"
+
+      - name: total_goals_conceded
+        description: "Total goals conceded"
+
+      - name: goals_conceded_home
+        description: "Goals conceded in home matches"
+
+      - name: goals_conceded_away
+        description: "Goals conceded in away matches"
+
+      - name: total_wins
+        description: "Total matches won"
+
+      - name: home_wins
+        description: "Home matches won"
+
+      - name: away_wins
+        description: "Away matches won"
+
+      - name: total_losses
+        description: "Total matches lost"
+
+      - name: home_losses
+        description: "Home matches lost"
+
+      - name: away_losses
+        description: "Away matches lost"
+
+      - name: total_draws
+        description: "Total matches drawn"
+
+      - name: home_draws
+        description: "Home matches drawn"
+
+      - name: away_draws
+        description: "Away matches drawn"
+  - name: CL_team_performances
+    description: "Football team performances in the UEFA Champions League"
+
+    columns:
+      - name: team_id
+        description: "Unique identifier for the team"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: team
+        description: "Team name"
+
+      - name: total_matches
+        description: "Total matches played in the UEFA Champions League"
+
+      - name: total_goals_scored
+        description: "Total goals scored in the UEFA Champions League"
+
+      - name: goals_scored_home
+        description: "Goals scored in home matches of the UEFA Champions League"
+
+      - name: goals_scored_away
+        description: "Goals scored in away matches of the UEFA Champions League"
+
+      - name: total_goals_conceded
+        description: "Total goals conceded in the UEFA Champions League"
+
+      - name: goals_conceded_home
+        description: "Goals conceded in home matches of the UEFA Champions League"
+
+      - name: goals_conceded_away
+        description: "Goals conceded in away matches of the UEFA Champions League"
+
+      - name: total_wins
+        description: "Total matches won in the UEFA Champions League"
+
+      - name: home_wins
+        description: "Home matches won in the UEFA Champions League"
+
+      - name: away_wins
+        description: "Away matches won in the UEFA Champions League"
+
+      - name: total_losses
+        description: "Total matches lost in the UEFA Champions League"
+
+      - name: home_losses
+        description: "Home matches lost in the UEFA Champions League"
+
+      - name: away_losses
+        description: "Away matches lost in the UEFA Champions League"
+
+      - name: total_draws
+        description: "Total matches drawn in the UEFA Champions League"
+
+      - name: home_draws
+        description: "Home matches drawn in the UEFA Champions League"
+
+      - name: away_draws
+        description: "Away matches drawn in the UEFA Champions League"
+  - name: PL_team_performances
+    description: "Football team performance metrics across all leagues"
+
+    columns:
+      - name: team_id
+        description: "Unique identifier for the team"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: team
+        description: "Team name"
+
+      - name: total_matches
+        description: "Total matches played by the team"
+
+      - name: total_goals_scored
+        description: "Total goals scored by the team"
+
+      - name: goals_scored_home
+        description: "Goals scored in home matches"
+
+      - name: goals_scored_away
+        description: "Goals scored in away matches"
+
+      - name: total_goals_conceded
+        description: "Total goals conceded by the team"
+
+      - name: goals_conceded_home
+        description: "Goals conceded in home matches"
+
+      - name: goals_conceded_away
+        description: "Goals conceded in away matches"
+
+      - name: total_wins
+        description: "Total matches won"
+
+      - name: home_wins
+        description: "Matches won at home"
+
+      - name: away_wins
+        description: "Matches won away from home"
+
+      - name: total_losses
+        description: "Total matches lost"
+
+      - name: home_losses
+        description: "Matches lost at home"
+
+      - name: away_losses
+        description: "Matches lost away from home"
+
+      - name: total_draws
+        description: "Total matches drawn"
+
+      - name: home_draws
+        description: "Home matches drawn"
+
+      - name: away_draws
+        description: "Away matches drawn"
+  - name: gold_cl_teams
+    description: "Dimension table containing champions leaguefootball team information and coaching details"
+
+    columns:
+      - name: team_id
+        description: "Unique identifier for the football team"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: team_name
+        description: "Official team name"
+
+      - name: coach
+        description: "Current head coach or manager"
+
+      - name: contract_start
+        description: "Coach contract start date"
+
+      - name: contract_end
+        description: "Coach contract end date"
+
+      - name: last_updated
+        description: "Timestamp when the team record was last updated"
+
+      - name: squad
+        description: "Name of the squad or player associated with the team"
+  - name: gold_teams_table
+    description: "Dimension table containing football team information and coaching details"
+
+    columns:
+      - name: team_id
+        description: "Unique identifier for the football team"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: team_name
+        description: "Official team name"
+
+      - name: coach
+        description: "Current head coach or manager"
+
+      - name: contract_start
+        description: "Coach contract start date"
+
+      - name: contract_end
+        description: "Coach contract end date"
+
+      - name: last_updated
+        description: "Timestamp when the team record was last updated"
+
+      - name: squad
+        description: "Name of the squad or player associated with the team"

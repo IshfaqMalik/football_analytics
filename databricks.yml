@@ -15,6 +15,10 @@ variables:
     description: The catalog to use
   dev_flag:
     default: true
+  container:
+    default: f1-dev
+  warehouse_id:
+    default: 0a9078df66d5fbb4
     
 
 targets:
@@ -32,6 +36,10 @@ targets:
         default: football_dev
       dev_flag:
         default: true
+      container:
+        default: f1-dev
+      warehouse_id:
+        default: 0a9078df66d5fbb4
     presets:
       artifacts_dynamic_version: true
   test:
@@ -45,10 +53,17 @@ targets:
         default: football_test
       dev_flag:
         default: false
+      container:
+        default: f1-test
+      warehouse_id:
+        default: f8034f4188472bfd
       
     permissions:
-      - user_name: ishfaqmmalik@outlook.com
+      - service_principal_name: 06dc8a1f-5666-4cdd-adb0-f08ed6f9ac1a
         level: CAN_MANAGE
+    run_as:
+      service_principal_name: 06dc8a1f-5666-4cdd-adb0-f08ed6f9ac1a
+      
   
   prod:
     mode: production
@@ -61,6 +76,12 @@ targets:
         default: football_prod
       dev_flag:
         default: false
+      container:
+        default: f1-prod
+      warehouse_id:
+        default: cb00ca4e59a0008f
     permissions:
-      - user_name: ishfaqmmalik@outlook.com
+      - service_principal_name:  b27b88cd-6019-4269-8f9c-aa9733ef23dc
         level: CAN_MANAGE
+    run_as:
+      service_principal_name: b27b88cd-6019-4269-8f9c-aa9733ef23dc

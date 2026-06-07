@@ -1,0 +1,65 @@
+resources:
+  jobs:
+    football_pipeline_notebooks:
+      name: football-pipeline-notebooks
+
+      job_clusters:
+        - job_cluster_key: football_cluster
+          new_cluster: "${var.football_cluster}"
+
+      environments:
+        - environment_key: dbt-default
+          spec:
+            client: "2"
+            dependencies:
+              - dbt-databricks>=1.0.0,<2.0.0
+
+      tasks:
+        - task_key: data_load
+          spark_python_task:
+            python_file: ../data/football_data.py
+            parameters:
+              - "${var.container}"
+          job_cluster_key: football_cluster
+
+        - task_key: bronze_ingestion
+          depends_on:
+            - task_key: data_load
+          notebook_task:
+            notebook_path: ../football-pipeline/notebooks/ingestion_bronze.ipynb
+            source: WORKSPACE
+            base_parameters:
+              pipeline_id: "{{job.id}}"
+              run_id: "{{job.run_id}}"
+              task_id: "{{task.run_id}}"
+              processing_date: "{{job.start_time.iso_datetime}}"
+              catalog: "${var.catalog}"
+          job_cluster_key: football_cluster
+
+        - task_key: transformation
+          depends_on:
+            - task_key: bronze_ingestion
+          notebook_task:
+            notebook_path: ../football-pipeline/notebooks/transform_silver.ipynb
+            source: WORKSPACE
+            base_parameters:
+              catalog: "${var.catalog}"
+          job_cluster_key: football_cluster
+
+        - task_key: gold
+          depends_on:
+            - task_key: transformation
+          dbt_task:
+            project_directory: ../gold_layer_football
+            commands:
+              - dbt debug
+              - dbt deps 
+              - dbt build  
+            warehouse_id: "${var.warehouse_id}"
+            catalog: "${var.catalog}"
+            schema: gold
+            source: WORKSPACE
+          environment_key: dbt-default
+          
+          
+   

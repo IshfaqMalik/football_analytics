@@ -3,7 +3,15 @@ resources:
     football_analytics:
       name: football_analytics
       tasks:
+        - task_key: data
+          spark_python_task:
+            python_file: ../data/football_data.py
+            parameters:
+              - "${var.container}"
+          job_cluster_key: football_cluster
         - task_key: bronze
+          depends_on:
+            - task_key: data
           spark_python_task:
             python_file: ../football-pipeline/bronze/ingestion.py
             parameters:
